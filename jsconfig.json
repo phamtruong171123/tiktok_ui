@@ -2,9 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"],
-      "test/*": ["test/*"],
-      "underscore": ["lodash"]
-    }
-  }
+      "~/*": ["src/*"],
+      "~": ["src"]
+    },
+    "checkJs": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"]
 }

@@ -1,10 +1,15 @@
-const {
-  override,useBabelRc
-} = require("customize-cra");
-const { use } = require("react");
-
+const { override, addBabelPlugin } = require('customize-cra');
 
 module.exports = override(
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useBabelRc()
+  addBabelPlugin([
+    'module-resolver',
+    {
+      root: ['./src'],
+      alias: {
+        '~': './src',
+        '@': './src'
+      },
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
+    }
+  ])
 );
